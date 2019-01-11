@@ -1,6 +1,6 @@
 //Update the name of the controller below and rename the file.
 const spenders = require("../controllers/spenders.js")
-//const users = require("../controllers/spenders.js")
+const expenses = require("../controllers/expenses.js")
 
 
 module.exports = function(app){  
@@ -12,12 +12,15 @@ module.exports = function(app){
   app.post('/spenders/login', spenders.login)
 
   app.post('/spenders/register', spenders.register)
-  /*
-  router.post('/expenses', (req, res) => {
-    const newExpense = db.expenses.insert({
+  app.get('/expenses', expenses.list)
+  app.post('/expenses/add/', expenses.add)
+  app.post('/expenses/remove/:id', expenses.delete)
+  app.patch('/expenses/edit', expenses.update)
+ /*   router.post('/expenses', (req, res) => {
+   const newExpense = db.expenses.insert({
       "expense_description": req.body.f_expense_description,
       "expense_amount": req.body.f_expense_amount,
-      "expens_reason": req.body.f_expenses_reason,
+      "expens_reason": req.body.f_expense_reason,
       "expense_details": req.body.f_expense_details,
       "expense_date": req.body.f_expense_date,
       "expense_paid": req.body.f_expense_paid,
