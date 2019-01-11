@@ -2,6 +2,10 @@ const knex = require('../db/knex.js')
 
     module.exports = {
 
+    test: (req, res) => {
+     knex('spenders')
+    .then(spender =>  res.json(spender))
+},
     register: (req, res) => {
         knex('spenders')
         .insert({

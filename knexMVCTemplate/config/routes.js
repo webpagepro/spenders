@@ -8,7 +8,9 @@ module.exports = function(app){
   const router = express.Router()
 
 
+  app.get('/spenders/login', spenders.test)
   app.post('/spenders/login', spenders.login)
+
   app.post('/spenders/register', spenders.register)
   /*
   router.post('/expenses', (req, res) => {
