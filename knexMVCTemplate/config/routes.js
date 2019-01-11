@@ -14,7 +14,7 @@ module.exports = function(app){
   app.post('/spenders/register', spenders.register)
   app.get('/expenses', expenses.list)
   app.post('/expenses/add/', expenses.add)
-  app.post('/expenses/remove/:id', expenses.delete)
+  app.delete('/expenses/remove/:id', expenses.delete)
   app.patch('/expenses/edit', expenses.update)
  /*   router.post('/expenses', (req, res) => {
    const newExpense = db.expenses.insert({

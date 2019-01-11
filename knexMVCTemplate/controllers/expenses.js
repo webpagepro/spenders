@@ -34,8 +34,8 @@ update:(req, res) => {
 
 delete: (req, res) => {
     knex('expenses').where('id', req.params.id)
-    .del()
-    .then((product) => res.json(product[0]))
+    .del().returning('*')
+    .then((product) => res.json(product))
     }   
  
 }
